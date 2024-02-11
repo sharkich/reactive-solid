@@ -1,4 +1,5 @@
 import { FC, useEffect, useState } from 'react';
+import './Products.css';
 
 interface Product {
   id: number;
@@ -29,22 +30,24 @@ export const Products: FC = () => {
 
   return (
     <div>
-      <h1>Products</h1>
+      <h1 className="title">Products</h1>
 
       {isLoading && <p>Loading...</p>}
 
       {error && <p>Error: {JSON.stringify(error)}</p>}
 
-      {products.map(product => (
-        <div key={product.id}>
-          <h2>{product.title}</h2>
-          <p>
-            <img alt={product.title} height={50} src={product.image} width={50} />
-          </p>
-          <p>{product.price}</p>
-          <p>{product.category}</p>
-        </div>
-      ))}
+      <div className="products">
+        {products.map(product => (
+          <div key={product.id} className="product">
+            <h2>{product.title}</h2>
+            <p>
+              <img alt={product.title} height={50} src={product.image} width={50} />
+            </p>
+            <p>{product.price}</p>
+            <p>{product.category}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
