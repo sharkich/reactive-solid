@@ -1,26 +1,74 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "module": "esnext",
+    "target": "esnext",
+
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
+
     "allowJs": true,
     "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
+    "noEmit": true,
+    "esModuleInterop": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "preserve",
+    "incremental": true,
+    "allowSyntheticDefaultImports": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": true,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+
+    "typeRoots": [
+      "./src/types"
+    ],
+
+    "baseUrl": ".",
+
+    "paths": {
+      "@pages/*": [
+        "src/pages/*"
+      ],
+      "@features/App/*": [
+        "src/features/App/*"
+      ],
+      "@features/Auth/*": [
+        "src/features/Auth/*"
+      ],
+      "@features/Designs/*": [
+        "src/features/Designs/*"
+      ],
+      "@features/Profile/*": [
+        "src/features/Profile/*"
+      ],
+      "@features/Subscription/*": [
+        "src/features/Subscription/*"
+      ],
+      "@shared/*": [
+        "src/shared/*"
+      ]
+    },
+
+    "sourceMap": true,
+    "inlineSources": true,
+
+    // Set `sourceRoot` to  "/" to strip the build path prefix
+    // from generated source code references.
+    // This improves issue grouping in Sentry.
+    "sourceRoot": "/"
   },
   "include": [
-    "src"
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }
