@@ -5,6 +5,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "remove": "^0.1.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -32,7 +33,7 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^8.56.0",
+    "@tanstack/eslint-plugin-query": "^5.20.1",
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -40,7 +41,21 @@
     "@types/node": "^16.18.80",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
+    "eslint": "^8.56.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-flowtype": "^8.0.3",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-sonarjs": "^0.23.0",
+    "eslint-plugin-sort-keys-fix": "^1.1.2",
+    "prettier": "^3.2.5",
     "react-scripts": "5.0.1",
-    "typescript": "^4.9.5"
+    "typescript": "^5.3.3"
   }
 }

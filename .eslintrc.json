@@ -21,7 +21,6 @@
     "prettier",
     "sonarjs",
     "sort-keys-fix",
-    "@tanstack/eslint-plugin-query",
     "prefer-arrow"
   ],
   "parser": "@typescript-eslint/parser",
