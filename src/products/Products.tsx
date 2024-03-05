@@ -12,11 +12,8 @@ export const Products: FC = () => {
   return (
     <div>
       <h1 className="title">Products</h1>
-
       {isLoading && <Loading />}
-
       {error && <Error error={error} />}
-
       {products.length && <ProductsList products={products} />}
     </div>
   );
