@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from 'react';
 
-import { getCard } from './api';
 import { ICard } from './card.interfaces';
+import { getCard } from '../api';
 
 export const Card: FC = () => {
   const [card, setCard] = useState<ICard | null>(null);
