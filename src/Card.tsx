@@ -10,17 +10,16 @@ export const Card: FC = () => {
     getCard().then(setCard);
   }, []);
 
+  if (!card) {
+    return <div style={{ margin: 64, textAlign: 'center', width: 200 }}>Loading...</div>;
+  }
+
   return (
-    <div>
-      {!card && <p>Loading...</p>}
-      {card && (
-        <div className="card">
-          <h1 style={{ fontSize: 24 }}>{card.title}</h1>
-          <img alt={card.title} src={card.image} width={380} />
-          <p>{card.subtitle}</p>
-          <p style={{ color: 'yellowgreen' }}>{card.size}</p>
-        </div>
-      )}
+    <div className="card">
+      <h1 style={{ fontSize: 24 }}>{card.title}</h1>
+      <img alt={card.title} src={card.image} width={380} />
+      <p>{card.subtitle}</p>
+      <p style={{ color: 'yellowgreen' }}>{card.size}</p>
     </div>
   );
 };

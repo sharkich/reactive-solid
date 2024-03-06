@@ -16,6 +16,16 @@ code {
     text-align: center;
 }
 
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
 .card {
     width: 400px;
     text-align: center;
