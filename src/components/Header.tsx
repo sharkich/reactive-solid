@@ -6,4 +6,4 @@ interface Props {
   card: ICard;
 }
 
-export const Header: FC<Props> = ({ card }) => <h1>{card.title}</h1>;
+export const Header: FC<Props> = ({ card }) => <h1 style={{ fontSize: 24 }}>{card.title}</h1>;

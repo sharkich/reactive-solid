@@ -9,6 +9,6 @@ interface Props {
 export const Description: FC<Props> = ({ card }) => (
   <>
     <p>{card.subtitle}</p>
-    <p>{card.size}</p>
+    <p style={{ color: 'yellowgreen' }}>{card.size}</p>
   </>
 );
