@@ -15,10 +15,10 @@ export const Card: FC = () => {
       {!card && <p>Loading...</p>}
       {card && (
         <div className="card">
-          <h1>{card.title}</h1>
+          <h1 style={{ fontSize: 24 }}>{card.title}</h1>
           <img alt={card.title} src={card.image} width={380} />
           <p>{card.subtitle}</p>
-          <p>{card.size}</p>
+          <p style={{ color: 'yellowgreen' }}>{card.size}</p>
         </div>
       )}
     </div>

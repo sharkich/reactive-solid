@@ -16,13 +16,6 @@ code {
     text-align: center;
 }
 
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding-bottom: 20px;
-}
-
 .card {
     width: 400px;
     text-align: center;
