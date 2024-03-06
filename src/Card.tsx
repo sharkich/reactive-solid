@@ -18,6 +18,7 @@ export const Card: FC = () => {
           <h1>{card.title}</h1>
           <img alt={card.title} src={card.image} width={380} />
           <p>{card.subtitle}</p>
+          <p>{card.size}</p>
         </div>
       )}
     </div>
