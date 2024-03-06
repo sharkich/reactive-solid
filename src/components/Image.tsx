@@ -1,9 +1,7 @@
-import { FC } from 'react';
-
 import { ICard } from '../card.interfaces';
 
-interface Props {
-  card: ICard;
+interface Props<T extends ICard> {
+  card: T;
 }
 
-export const Image: FC<Props> = ({ card }) => <img alt={card.title} src={card.image} width={380} />;
+export const Image = <T extends ICard>({ card }: Props<T>) => <img alt={card.title} src={card.image} width={380} />;

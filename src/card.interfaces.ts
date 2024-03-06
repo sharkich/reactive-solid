@@ -5,3 +5,7 @@ export interface ICard {
   image: string;
   size: string;
 }
+
+export interface IArt extends ICard {
+  author: string;
+}
