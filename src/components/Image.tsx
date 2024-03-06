@@ -1,7 +1,5 @@
 import { ICard } from '../card.interfaces';
 
-interface Props {
-  card: ICard;
-}
+export type ImageProps = Pick<ICard, 'title' | 'image'>;
 
-export const Image = ({ card }: Props) => <img alt={card.title} src={card.image} width={380} />;
+export const Image = ({ title, image }: ImageProps) => <img alt={title} src={image} width={380} />;

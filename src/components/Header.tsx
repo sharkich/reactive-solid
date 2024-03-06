@@ -1,7 +1,5 @@
 import { ICard } from '../card.interfaces';
 
-interface Props {
-  card: ICard;
-}
+export type HeaderProps = Pick<ICard, 'title'>;
 
-export const Header = ({ card }: Props) => <h1 style={{ fontSize: 24 }}>{card.title}</h1>;
+export const Header = ({ title }: HeaderProps) => <h1 style={{ fontSize: 24 }}>{title}</h1>;
