@@ -1,25 +1,47 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, ReactNode } from 'react';
 
 import { ICard } from './card.interfaces';
-import { getCard } from '../api';
+import { CardDescription } from './CardDescription';
+import { CardHeader } from './CardHeader';
+import { CardImage } from './CardImage';
+import { Loading } from './Loading';
 
-export const Card: FC = () => {
-  const [card, setCard] = useState<ICard | null>(null);
+interface CardTemplateProps<T extends ICard> {
+  card: T;
+  renderCardHeaderComponent?: (card: T) => ReactNode;
+  renderCardImageComponent?: (card: T) => ReactNode;
+  renderCardDescriptionComponent?: (card: T) => ReactNode;
+}
 
-  useEffect(() => {
-    getCard().then(setCard);
-  }, []);
+export const CardTemplate = <T extends ICard>({
+  card,
+  renderCardHeaderComponent = _card => <CardHeader title={_card.title} />,
+  renderCardImageComponent = _card => <CardImage image={_card.image} title={_card.title} />,
+  renderCardDescriptionComponent = _card => <CardDescription size={_card.size} subtitle={_card.subtitle} />
+}: CardTemplateProps<T>) => (
+  <div className="card">
+    {renderCardHeaderComponent(card)}
+    {renderCardImageComponent(card)}
+    {renderCardDescriptionComponent(card)}
+  </div>
+);
+
+interface Props<T extends ICard> {
+  getUseCard: () => { card: T | null };
+  LoadingComponent?: FC;
+  renderCardTemplate?: (card: T) => ReactNode;
+}
+
+export const SelfLoadingCard = <T extends ICard>({
+  getUseCard,
+  LoadingComponent = Loading,
+  renderCardTemplate = card => <CardTemplate card={card} />
+}: Props<T>) => {
+  const { card } = getUseCard();
 
   if (!card) {
-    return <div style={{ margin: 64, textAlign: 'center', width: 200 }}>Loading...</div>;
+    return <LoadingComponent />;
   }
 
-  return (
-    <div className="card">
-      <h1 style={{ fontSize: 24 }}>{card.title}</h1>
-      <img alt={card.title} src={card.image} width={380} />
-      <p>{card.subtitle}</p>
-      <p style={{ color: 'yellowgreen' }}>{card.size}</p>
-    </div>
-  );
+  return renderCardTemplate(card);
 };
