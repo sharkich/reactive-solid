@@ -1,5 +1,6 @@
 import { FC } from 'react';
 
+import { Description } from './Description';
 import { IArt } from '../card.interfaces';
 
 interface Props {
@@ -8,8 +9,7 @@ interface Props {
 
 export const ArtDescription: FC<Props> = ({ card }) => (
   <>
-    <p>{card.subtitle}</p>
-    <p style={{ color: 'yellowgreen' }}>{card.size}</p>
+    <Description card={card} />
     <p style={{ color: 'red' }}>{card.author}</p>
   </>
 );
