@@ -1,11 +1,12 @@
 import React, { FC, useEffect, useState } from 'react';
 
 import { getArt, getCard } from './api';
-import { CardTemplate, SelfLoadingCard } from './Card/Card';
 import { IArt, ICard } from './Card/card.interfaces';
+import { CardTemplate } from './Card/CardTemplate';
 import { AnyCardTemplate } from './Card/components/AnyCardTemplate';
 import { ArtDescription } from './Card/components/ArtDescription';
 import { Loading } from './Card/components/Loading';
+import { SelfLoadingCard } from './Card/components/SelfLoadingCard';
 import { useArt } from './Card/useArt';
 import { useCard } from './Card/useCard';
 

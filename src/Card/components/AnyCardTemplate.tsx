@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
 import { ArtDescription } from './ArtDescription';
-import { CardTemplate } from '../Card';
 import { IArt, ICard, isArt } from '../card.interfaces';
+import { CardTemplate } from '../CardTemplate';
 
 interface Props {
   card: ICard | IArt;
