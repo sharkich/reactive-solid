@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import { getArt } from './api';
 import { IArt } from './card.interfaces';
+import { getArt } from '../api';
 
 export const useArt = () => {
   const [card, setCard] = useState<IArt | null>(null);

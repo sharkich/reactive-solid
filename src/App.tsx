@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 
-import { CardTemplate, SelfLoadingCard } from './Card';
-import { ArtDescription } from './components/ArtDescription';
-import { useArt } from './useArt';
-import { useCard } from './useCard';
+import { CardTemplate, SelfLoadingCard } from './Card/Card';
+import { ArtDescription } from './Card/components/ArtDescription';
+import { useArt } from './Card/useArt';
+import { useCard } from './Card/useCard';
 
 export const App: FC = () => (
   <div className="App">
