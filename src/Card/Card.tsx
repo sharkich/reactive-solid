@@ -3,7 +3,7 @@ import { FC } from 'react';
 import { Description } from './components/Description';
 import { Header } from './components/Header';
 import { Image } from './components/Image';
-import { useCard } from '../useCard';
+import { useCard } from './useCard';
 
 export const Card: FC = () => {
   const { card } = useCard();
