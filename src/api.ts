@@ -1,4 +1,4 @@
-import { ICard } from './card.interfaces';
+import { ICard } from './Card/card.interfaces';
 
 export const getCard = async () =>
   await new Promise<ICard>(resolve => {
