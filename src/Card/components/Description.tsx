@@ -2,13 +2,11 @@ import { FC } from 'react';
 
 import { ICard } from '../card.interfaces';
 
-interface Props {
-  card: ICard;
-}
+export type DescriptionProps = Pick<ICard, 'subtitle' | 'size'>;
 
-export const Description: FC<Props> = ({ card }) => (
+export const Description: FC<DescriptionProps> = ({ subtitle, size }) => (
   <>
-    <p>{card.subtitle}</p>
-    <p style={{ color: 'yellowgreen' }}>{card.size}</p>
+    <p>{subtitle}</p>
+    <p style={{ color: 'yellowgreen' }}>{size}</p>
   </>
 );

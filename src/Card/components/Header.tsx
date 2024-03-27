@@ -2,8 +2,6 @@ import { FC } from 'react';
 
 import { ICard } from '../card.interfaces';
 
-interface Props {
-  card: ICard;
-}
+export type HeaderProps = Pick<ICard, 'title'>;
 
-export const Header: FC<Props> = ({ card }) => <h1 style={{ fontSize: 24 }}>{card.title}</h1>;
+export const Header: FC<HeaderProps> = ({ title }) => <h1 style={{ fontSize: 24 }}>{title}</h1>;

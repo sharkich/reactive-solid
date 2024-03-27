@@ -7,7 +7,11 @@ export const App: FC = () => (
   <div className="App">
     <main className="cards">
       <Card />
-      <ArtCard DescriptionComponent={ArtDescription} />
+      <ArtCard
+        renderDescriptionComponent={({ size, subtitle, author }) => (
+          <ArtDescription author={author} size={size} subtitle={subtitle} />
+        )}
+      />
     </main>
   </div>
 );

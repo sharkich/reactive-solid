@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 
 import { ICard } from './card.interfaces';
 import { Description } from './components/Description';
@@ -9,18 +9,18 @@ import { useArt } from './useArt';
 import { useCard } from './useCard';
 
 interface Props<T extends ICard> {
-  HeaderComponent?: FC<{ card: T }>;
-  ImageComponent?: FC<{ card: T }>;
-  DescriptionComponent?: FC<{ card: T }>;
+  renderHeaderComponent?: (card: T) => ReactNode;
+  renderImageComponent?: (card: T) => ReactNode;
+  renderDescriptionComponent?: (card: T) => ReactNode;
   LoadingComponent?: FC;
 }
 
 const getCard =
   <T extends ICard>(useCardHook: () => { card: T | null }) =>
   ({
-    HeaderComponent = Header,
-    ImageComponent = Image,
-    DescriptionComponent = Description,
+    renderHeaderComponent = ({ title }) => <Header title={title} />,
+    renderImageComponent = ({ title, image }) => <Image image={image} title={title} />,
+    renderDescriptionComponent = ({ subtitle, size }) => <Description size={size} subtitle={subtitle} />,
     LoadingComponent = Loading
   }: Props<T>) => {
     const { card } = useCardHook();
@@ -30,9 +30,9 @@ const getCard =
         {!card && <LoadingComponent />}
         {card && (
           <div className="card">
-            <HeaderComponent card={card} />
-            <ImageComponent card={card} />
-            <DescriptionComponent card={card} />
+            {renderHeaderComponent(card)}
+            {renderImageComponent(card)}
+            {renderDescriptionComponent(card)}
           </div>
         )}
       </div>
