@@ -1,11 +1,12 @@
 import React, { FC } from 'react';
 
-import { Products } from './products/Products';
+import { Card } from './Card/Card';
 
 export const App: FC = () => (
   <div className="App">
-    <main>
-      <Products />
+    <main className="cards">
+      <Card />
+      <Card />
     </main>
   </div>
 );
