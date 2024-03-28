@@ -9,3 +9,5 @@ export interface ICard {
 export interface IArt extends ICard {
   author: string;
 }
+
+export const isArt = (card: ICard | IArt): card is IArt => (card as IArt).author !== undefined;
