@@ -1,12 +1,10 @@
-import { FC } from 'react';
-
 import { ICard } from '../card.interfaces';
 
-interface Props {
-  card: ICard;
+interface Props<T extends ICard> {
+  card: T;
 }
 
-export const Description: FC<Props> = ({ card }) => (
+export const Description = <T extends ICard>({ card }: Props<T>) => (
   <>
     <p>{card.subtitle}</p>
     <p style={{ color: 'yellowgreen' }}>{card.size}</p>
